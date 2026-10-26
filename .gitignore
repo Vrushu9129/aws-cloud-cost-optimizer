@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.env
+*.pem
+*.key
+.aws/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+optimization_report.txt
