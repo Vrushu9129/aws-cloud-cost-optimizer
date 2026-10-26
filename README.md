@@ -15,6 +15,7 @@ This is a learning project that generates recommendations without automatically 
 - **AWS SDK:** boto3
 - **Development:** VS Code, AWS CLI
 - **Version Control:** Git and GitHub
+- **CI Automation:** GitHub Actions (Python syntax validation)
 
 ## Architecture
 
@@ -49,8 +50,10 @@ Runs all three Python scripts and displays their results in one terminal report.
 
 ## Project Files
 
-```text
 aws-devops-cost-optimizer/
+├── .github/
+│   └── workflows/
+│       └── python-ci.yml
 ├── main.py
 ├── ec2_optimizer.py
 ├── ebs_optimizer.py
@@ -60,7 +63,7 @@ aws-devops-cost-optimizer/
 ├── .gitignore
 ├── README.md
 └── screenshots/
-```
+
 
 ## How to Run
 
@@ -81,8 +84,21 @@ python -m pip install -r requirements.txt
 python cost_optimizer.py
 ```
 
-## Sample Test Results
+## GitHub Actions CI
 
+This project includes a basic Continuous Integration (CI) workflow using GitHub Actions.
+
+- Automatically runs when code is pushed to the `main` branch or a pull request targets `main`.
+- Sets up Python and installs project dependencies.
+- Checks Python scripts for syntax errors.
+- Displays success or failure results in the GitHub Actions tab.
+
+**Purpose:** To learn basic CI automation and identify Python syntax errors automatically.
+
+**Note:** This is a learning-based POC. GitHub Actions does not execute AWS analysis or deploy infrastructure.
+
+## Sample Test Results
+## GitHub Actions CI
 Tested on October 26, 2026:
 
 | Resource | Result |
@@ -111,6 +127,7 @@ These results demonstrate API connectivity and rule-based analysis. They do not 
 - How to inspect S3 object metadata.
 - How to authenticate using AWS IAM credentials.
 - How to combine multiple automation scripts into a single report.
+- How to create a basic GitHub Actions CI workflow using YAML for automated Python syntax validation.
 
 ## Future Improvements
 
